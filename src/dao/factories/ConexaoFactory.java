@@ -10,7 +10,7 @@ public class ConexaoFactory {
     private static final String USER = "root";
     private static final String PASSWORD = "";
 
-    private static Connection getConexao() throws SQLException {
+    public static Connection getConexao() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASSWORD);
     }
 }
