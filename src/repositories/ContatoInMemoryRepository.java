@@ -5,38 +5,52 @@ import java.util.List;
 
 import domain.Contato;
 
-public class ContatoInMemoryRepository implements IContatoRepository{
+public class ContatoInMemoryRepository implements IContatoRepository {
 
     private List<Contato> contatos = new ArrayList<>();
 
     @Override
     public void salvar(Contato contato) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'salvar'");
+        // TODO: Validar objeto contato
+        this.contatos.add(contato);
     }
 
     @Override
     public void atualizar(Contato contato) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'atualizar'");
+        // TODO: Validar objeto contato
+        this.contatos
+                .stream()
+                .filter(c -> c.getEmail().equals(contato.getEmail()))
+                .findFirst()
+                .ifPresent(c -> {
+                    c.setNome(contato.getNome());
+                    c.setTelefone(contato.getTelefone());
+                    c.setLinkedin(contato.getLinkedin());
+                });
+
     }
 
     @Override
     public void excluir(Integer id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'excluir'");
+        this.contatos
+                .stream()
+                .filter(c -> c.getId().equals(id))
+                .findFirst()
+                .ifPresent(c -> this.contatos.remove(c));
     }
 
     @Override
     public List<Contato> buscarTodos() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'buscarTodos'");
+        return this.contatos;
     }
 
     @Override
     public Contato buscarPorEmail(String email) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'buscarPorEmail'");
+        return this.contatos
+                .stream()
+                .filter(c -> c.getEmail().equals(email))
+                .findFirst()
+                .orElse(null);
     }
-    
+
 }
