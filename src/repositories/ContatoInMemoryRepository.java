@@ -11,13 +11,11 @@ public class ContatoInMemoryRepository implements IContatoRepository {
 
     @Override
     public void salvar(Contato contato) {
-        // TODO: Validar objeto contato
         this.contatos.add(contato);
     }
 
     @Override
     public void atualizar(Contato contato) {
-        // TODO: Validar objeto contato
         this.contatos
                 .stream()
                 .filter(c -> c.getEmail().equals(contato.getEmail()))

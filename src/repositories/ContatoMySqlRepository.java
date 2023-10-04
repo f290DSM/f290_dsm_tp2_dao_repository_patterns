@@ -15,7 +15,6 @@ public class ContatoMySqlRepository implements IContatoRepository{
 
     @Override
     public void salvar(Contato contato) {
-        //TODO: Validar o obejto contato
         dao.salvar(contato);
     }
 
@@ -33,8 +32,7 @@ public class ContatoMySqlRepository implements IContatoRepository{
 
     @Override
     public List<Contato> buscarTodos() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'buscarTodos'");
+        return dao.buscarTodos();
     }
 
     @Override
