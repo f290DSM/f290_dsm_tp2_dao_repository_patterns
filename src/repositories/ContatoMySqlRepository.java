@@ -3,7 +3,7 @@ package repositories;
 import java.util.List;
 
 import dao.factories.IContatoDAO;
-import domain.Contato;
+import domain.ContatoVO;
 
 public class ContatoMySqlRepository implements IContatoRepository{
 
@@ -14,12 +14,12 @@ public class ContatoMySqlRepository implements IContatoRepository{
     }
 
     @Override
-    public void salvar(Contato contato) {
+    public void salvar(ContatoVO contato) {
         dao.salvar(contato);
     }
 
     @Override
-    public void atualizar(Contato contato) {
+    public void atualizar(ContatoVO contato) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'atualizar'");
     }
@@ -31,12 +31,12 @@ public class ContatoMySqlRepository implements IContatoRepository{
     }
 
     @Override
-    public List<Contato> buscarTodos() {
+    public List<ContatoVO> buscarTodos() {
         return dao.buscarTodos();
     }
 
     @Override
-    public Contato buscarPorEmail(String email) {
+    public ContatoVO buscarPorEmail(String email) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'buscarPorEmail'");
     }

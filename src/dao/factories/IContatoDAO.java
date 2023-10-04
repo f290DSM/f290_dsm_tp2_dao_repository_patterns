@@ -2,16 +2,16 @@ package dao.factories;
 
 import java.util.List;
 
-import domain.Contato;
+import domain.ContatoVO;
 
 public interface IContatoDAO {
-    void salvar(Contato contato);
+    void salvar(ContatoVO contato);
 
-    void atualizar(Contato contato);
+    void atualizar(ContatoVO contato);
 
     void excluir(Integer id);
 
-    List<Contato> buscarTodos();
+    List<ContatoVO> buscarTodos();
 
-    Contato buscarPorEmail(String email);
+    ContatoVO buscarPorEmail(String email);
 }

@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import domain.Contato;
+import domain.ContatoVO;
 
 public class ContatoMySqlDAO implements IContatoDAO {
 
@@ -22,7 +22,7 @@ public class ContatoMySqlDAO implements IContatoDAO {
     }
 
     @Override
-    public void salvar(Contato contato) {
+    public void salvar(ContatoVO contato) {
         StringBuilder builder = new StringBuilder();
         builder.append("INSERT INTO contatos (")
                 .append("nome, email, telefone, linkedin) ")
@@ -43,7 +43,7 @@ public class ContatoMySqlDAO implements IContatoDAO {
     }
 
     @Override
-    public void atualizar(Contato contato) {
+    public void atualizar(ContatoVO contato) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'atualizar'");
     }
@@ -55,15 +55,15 @@ public class ContatoMySqlDAO implements IContatoDAO {
     }
 
     @Override
-    public List<Contato> buscarTodos() {
+    public List<ContatoVO> buscarTodos() {
         //TODO: Declarar lista de contatos
-        List<Contato> contatos = new ArrayList<>();
+        List<ContatoVO> contatos = new ArrayList<>();
         String query = "SELECT id, nome, email, telefone, linkedin FROM contatos;";
         try (Statement stm = connection.createStatement();
                 ResultSet rst = stm.executeQuery(query)) {
             // Percorrer o ResulSet e preencher a lista de contatos
             while(rst.next()) {
-                Contato contato = new Contato(
+                ContatoVO contato = new ContatoVO(
                     rst.getInt("id"), 
                     rst.getString("nome"), 
                     rst.getString("email"), 
@@ -82,7 +82,7 @@ public class ContatoMySqlDAO implements IContatoDAO {
     }
 
     @Override
-    public Contato buscarPorEmail(String email) {
+    public ContatoVO buscarPorEmail(String email) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'buscarPorEmail'");
     }
