@@ -86,4 +86,10 @@ public class ContatoVO {
             return false;
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "ContatoVO [id=" + id + ", nome=" + nome + ", email=" + email + ", telefone=" + telefone + ", linkedin="
+                + linkedin + "]";
+    }
 }

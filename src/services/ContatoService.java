@@ -52,7 +52,7 @@ public class ContatoService implements IContadoService {
     @Override
     public List<ContatoVO> buscarTodos() {
         // TODO: Consultar e retornar todos os contatos cadastrados
-        return Collections.emptyList();
+        return repository.buscarTodos();
     }
 
 }
