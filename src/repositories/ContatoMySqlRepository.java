@@ -20,14 +20,12 @@ public class ContatoMySqlRepository implements IContatoRepository{
 
     @Override
     public void atualizar(ContatoVO contato) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'atualizar'");
+        // TODO: Realizar chamada do método de atualização do DAO
     }
 
     @Override
     public void excluir(Integer id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'excluir'");
+        // TODO: Realizar chamada do método de exclusão do DAO
     }
 
     @Override
@@ -37,8 +35,8 @@ public class ContatoMySqlRepository implements IContatoRepository{
 
     @Override
     public ContatoVO buscarPorEmail(String email) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'buscarPorEmail'");
+        // TODO: Realizar chamada do método de busca por e-mail do DAO
+        return null;
     }
     
 }

@@ -44,19 +44,17 @@ public class ContatoMySqlDAO implements IContatoDAO {
 
     @Override
     public void atualizar(ContatoVO contato) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'atualizar'");
+        //TODO: Atualizar contato existente na base dados
     }
 
     @Override
     public void excluir(Integer id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'excluir'");
+        // TODO: Excluir contato com base no ID
     }
 
     @Override
     public List<ContatoVO> buscarTodos() {
-        //TODO: Declarar lista de contatos
+        // Declarar lista de contatos
         List<ContatoVO> contatos = new ArrayList<>();
         String query = "SELECT id, nome, email, telefone, linkedin FROM contatos;";
         try (Statement stm = connection.createStatement();
@@ -83,8 +81,8 @@ public class ContatoMySqlDAO implements IContatoDAO {
 
     @Override
     public ContatoVO buscarPorEmail(String email) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'buscarPorEmail'");
+        // TODO: Retornar um contato com base no e-mail
+        return null;
     }
 
 }
