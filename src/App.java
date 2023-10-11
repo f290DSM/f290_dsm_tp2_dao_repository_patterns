@@ -1,11 +1,9 @@
 import java.sql.Connection;
-import java.util.List;
 
 import dao.factories.ConexaoFactory;
 import dao.factories.ContatoMySqlDAO;
 import dao.factories.IContatoDAO;
 import domain.ContatoVO;
-import repositories.ContatoInMemoryRepository;
 import repositories.ContatoMySqlRepository;
 import repositories.IContatoRepository;
 import services.ContatoService;
